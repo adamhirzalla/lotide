@@ -12,12 +12,12 @@ const assertArraysEqual = (firstArray, secondArray) => {
       `⛔ Array Assertion Failed`
   );
 };
-const takeUntil = function (array, callback) {
+const takeUntil = function(array, callback) {
   const result = [];
   for (const element of array) {
     if (callback(element))
       return result;
-    result.push(element)
+    result.push(element);
   }
   return result;
 };
