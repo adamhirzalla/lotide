@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@adamhirzalla/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library.",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/adamhirzalla/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adam Hirzalla <AdamHirzalla@outlook.com> (https://github.com/adamhirzalla)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/adamhirzalla/lotide/issues"
