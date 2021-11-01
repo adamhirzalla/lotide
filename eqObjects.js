@@ -26,12 +26,10 @@ const eqObjects = (object1, object2) => {
 };
 
 // Test cases
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
-const obj1 = { obj: { name: 'Adam', birthday: 'Dec 18' }, d: ["2", 3, 4] };
-const obj2 = { d: ["2", 3, 4], obj: { birthday: 'Dec 18', name: 'Adam' } };
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
-assertEqual(eqObjects(obj1, obj2), true);
-assertEqual(eqObjects(obj1, cd), false);
+assertEqual(eqObjects({ c: "1", d: ["2", 3] }, { d: ["2", 3], c: "1" }), true);
+assertEqual(eqObjects({ c: "1", d: ["2", 3] }, { c: "1", d: ["2", 3, 4] }), false);
+assertEqual(eqObjects({ obj: { name: 'Adam', birthday: 'Dec 18' }, d: ["2", 3, 4] }, { d: ["2", 3, 4], obj: { birthday: 'Dec 18', name: 'Adam' } }), true);
+assertEqual(eqObjects({ obj: { name: 'Adam', birthday: 'Dec 18' }, d: ["2", 3, 4] }, { c: "1", d: ["2", 3] }), false);
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
