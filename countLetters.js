@@ -17,6 +17,8 @@ const countLetters = (str) => {
   return countObj;
 };
 
+module.exports = countLetters;
+
 const result = countLetters("lighthouse in the house");
 assertEqual(result["l"], 1);
 assertEqual(result["h"], 4);

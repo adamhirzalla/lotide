@@ -19,6 +19,8 @@ const map = (array, callback) => {
   }
   return results;
 };
+module.exports = map;
+
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
 const results2 = map(words, word => word.toUpperCase());

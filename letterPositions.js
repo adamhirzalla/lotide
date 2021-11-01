@@ -23,6 +23,9 @@ const letterPositions = function(sentence) {
   }
   return results;
 };
+
+module.exports = letterPositions;
+
 const result = letterPositions('hello');
 assertArraysEqual(result['h'], [0]);
 assertArraysEqual(result['e'], [1]);
