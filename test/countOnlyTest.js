@@ -1,20 +1,38 @@
 const assertEqual = require('../assertEqual');
 const countOnly = require('../countOnly');
+const { assert } = require('chai');
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+describe("#countOnly", () => {
+  it("returns 1 for result['Jason']", () => {
+    const firstNames = [
+      "Karl",
+      "Salima",
+      "Agouhanna",
+      "Fang",
+      "Kavith",
+      "Jason",
+      "Salima",
+      "Fang",
+      "Joe"
+    ];
+    
+    const result = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+    assert.strictEqual(result["Jason"], 1);
+  });
+  it("returns undefined for result['Karima']", () => {
+    const firstNames = [
+      "Karl",
+      "Salima",
+      "Agouhanna",
+      "Fang",
+      "Kavith",
+      "Jason",
+      "Salima",
+      "Fang",
+      "Joe"
+    ];
+    
+    const result = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+    assert.strictEqual(result["Karima"], undefined);
+  });
+});
